@@ -41,7 +41,7 @@ export function Hero() {
     return () => clearInterval(id);
   }, []);
 
-  const banner = banners[index];
+  const banner = banners[index] ?? banners[0]!;
 
   return (
     <section className="relative overflow-hidden">
