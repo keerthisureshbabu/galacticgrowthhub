@@ -22,8 +22,15 @@ const staticPages = [
   "/privacy-policy",
 ];
 
+// GitHub Pages serves the site from https://<user>.github.io/galacticgrowthhub/,
+// so the static export needs that sub-path as its base. Lovable hosting stays at "/".
+const BASE = STATIC ? (process.env["BASE_PATH"] ?? "/galacticgrowthhub/") : "/";
+
 export default defineConfig({
   ...(STATIC ? { nitro: false as const } : {}),
+  vite: {
+    base: BASE,
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this

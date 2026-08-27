@@ -5,8 +5,13 @@ import { routeTree } from "./routeTree.gen";
 export const getRouter = () => {
   const queryClient = new QueryClient();
 
+  // Matches Vite's `base` so client-side routing works when the app is hosted
+  // under a sub-path (e.g. GitHub Pages /galacticgrowthhub/).
+  const basepath = import.meta.env.BASE_URL || "/";
+
   const router = createRouter({
     routeTree,
+    basepath,
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
