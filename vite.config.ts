@@ -6,27 +6,37 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Static export mode (`bun run build:static`): disables the server/deploy plugin and
+// prerenders every route to plain HTML in dist/client, which hydrates into a client-side
+// SPA. Use that folder for static hosts (GitHub Pages, Netlify, S3...).
+const STATIC = process.env["STATIC_EXPORT"] === "1";
+
+const staticPages = [
+  "/",
+  "/about",
+  "/services",
+  "/pricing",
+  "/our-work",
+  "/contact",
+  "/terms-and-conditions",
+  "/privacy-policy",
+];
+
 export default defineConfig({
+  ...(STATIC ? { nitro: false as const } : {}),
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    // Fully static output: every route is prerendered to HTML at build time and
-    // hydrates into a client-side SPA (no server runtime needed to serve pages).
-    prerender: {
-      enabled: true,
-      crawlLinks: true,
-      filter: ({ path }: { path: string }) => !path.startsWith("/api"),
-    },
-    pages: [
-      "/",
-      "/about",
-      "/services",
-      "/pricing",
-      "/our-work",
-      "/contact",
-      "/terms-and-conditions",
-      "/privacy-policy",
-    ].map((path) => ({ path, prerender: { enabled: true } })),
+    ...(STATIC
+      ? {
+          spa: { enabled: true },
+          prerender: { enabled: true, crawlLinks: true },
+          pages: staticPages.map((path) => ({
+            path,
+            prerender: { enabled: true },
+          })),
+        }
+      : {}),
   },
 });
