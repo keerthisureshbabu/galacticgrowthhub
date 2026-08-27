@@ -30,7 +30,6 @@ export default defineConfig({
     server: { entry: "server" },
     ...(STATIC
       ? {
-          spa: { enabled: true },
           prerender: { enabled: true, crawlLinks: true },
           pages: staticPages.map((path) => ({
             path,
