@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import logo from "@/assets/logo.asset.json";
+import logo from "@/assets/logo.png";
 import { GLink } from "@/components/GButton";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +35,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <img
-            src={logo.url}
+            src={logo}
             alt="Galactic Growth Hub - Digital Marketing Agency in Salem, Tamil Nadu logo"
             width={48}
             height={48}

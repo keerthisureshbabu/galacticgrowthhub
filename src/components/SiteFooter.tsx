@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 
-import logo from "@/assets/logo.asset.json";
+import logo from "@/assets/logo.png";
 import { services } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -21,7 +21,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <img
-            src={logo.url}
+            src={logo}
             alt="Galactic Growth Hub logo"
             width={56}
             height={56}
