@@ -83,7 +83,7 @@ function Pricing() {
 
       {/* Hero */}
       <Section>
-        <div className="relative">
+        <div className="relative overflow-x-clip">
           <span
             aria-hidden
             className="animate-orb pointer-events-none absolute -top-24 left-1/2 -z-10 size-[36rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--gold)_14%,transparent),transparent_65%)]"
