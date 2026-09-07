@@ -24,11 +24,11 @@ const banners = [
 ];
 
 const floaters = [
-  { label: "SEO", className: "left-[6%] top-[22%]", delay: "0s" },
-  { label: "META ADS", className: "right-[8%] top-[16%]", delay: "-1.4s" },
-  { label: "GOOGLE ADS", className: "right-[14%] bottom-[18%]", delay: "-2.8s" },
-  { label: "SOCIAL MEDIA", className: "left-[10%] bottom-[22%]", delay: "-2s" },
-  { label: "GROWTH", className: "left-[46%] top-[8%]", delay: "-3.6s" },
+  { label: "SEO", className: "left-0 top-[24%]", delay: "0s" },
+  { label: "META ADS", className: "right-0 top-[16%]", delay: "-1.4s" },
+  { label: "GOOGLE ADS", className: "right-0 bottom-[24%]", delay: "-2.8s" },
+  { label: "SOCIAL MEDIA", className: "left-0 bottom-[18%]", delay: "-2s" },
+  { label: "GROWTH", className: "left-1/2 top-[6%] -translate-x-1/2", delay: "-3.6s" },
 ];
 
 export function Hero() {
