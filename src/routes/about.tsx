@@ -100,7 +100,10 @@ function About() {
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="space-y-5 self-center text-sm leading-relaxed text-muted-foreground md:text-base">
+          <Reveal
+            delay={120}
+            className="card-premium flex h-full flex-col justify-center gap-5 p-8 text-sm leading-relaxed text-muted-foreground md:p-10 md:text-base"
+          >
             <h2 className="text-3xl font-semibold text-foreground md:text-4xl">Meet the founder — Sanjay</h2>
             <p>
               Sanjay is a passionate entrepreneur, digital marketer, model, and artist from Salem, Tamil Nadu.
