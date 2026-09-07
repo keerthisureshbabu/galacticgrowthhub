@@ -12,6 +12,7 @@ import {
   SectionHeading,
 } from "@/components/sections";
 import { homeFaqs, plans, projects, services, whyChooseUs } from "@/lib/content";
+import { projectImages } from "@/lib/media";
 import { faqSchema, localBusinessSchema, pageMeta, site } from "@/lib/site";
 
 export const Route = createFileRoute("/")({

@@ -13,7 +13,7 @@ import {
   SectionHeading,
 } from "@/components/sections";
 import { projects, workFaqs } from "@/lib/content";
-import { berlinReels, clientLogos } from "@/lib/media";
+import { berlinReels, clientLogos, projectImages } from "@/lib/media";
 import { breadcrumbSchema, faqSchema, pageMeta } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
