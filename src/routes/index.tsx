@@ -11,17 +11,9 @@ import {
   Section,
   SectionHeading,
 } from "@/components/sections";
-import workBerlin from "@/assets/work-berlin.jpg";
-import workEyal from "@/assets/work-eyal.jpg";
-import workGrm from "@/assets/work-grm.jpg";
 import { homeFaqs, plans, projects, services, whyChooseUs } from "@/lib/content";
+import { projectImages } from "@/lib/media";
 import { faqSchema, localBusinessSchema, pageMeta, site } from "@/lib/site";
-
-const images: Record<string, string> = {
-  "grm-maternity-store": workGrm,
-  "eyal-muzik": workEyal,
-  "berlin-mens-clothing": workBerlin,
-};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -183,12 +175,12 @@ function Home() {
               <Link to="/our-work" hash={p.slug} className="card-premium group block overflow-hidden">
                 <div className="overflow-hidden">
                   <img
-                    src={images[p.slug]}
+                    src={projectImages[p.slug]}
                     alt={p.alt}
-                    width={1024}
-                    height={768}
+                    width={1353}
+                    height={600}
                     loading="lazy"
-                    className="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="aspect-[2.25] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">

@@ -2,9 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Check, Instagram } from "lucide-react";
 import { useMemo, useState } from "react";
 
-import workBerlin from "@/assets/work-berlin.jpg";
-import workEyal from "@/assets/work-eyal.jpg";
-import workGrm from "@/assets/work-grm.jpg";
 import { ReelPlayer } from "@/components/ReelPlayer";
 import { Reveal } from "@/components/Reveal";
 import {
@@ -16,15 +13,9 @@ import {
   SectionHeading,
 } from "@/components/sections";
 import { projects, workFaqs } from "@/lib/content";
-import { berlinReels, clientLogos } from "@/lib/media";
+import { berlinReels, clientLogos, projectImages } from "@/lib/media";
 import { breadcrumbSchema, faqSchema, pageMeta } from "@/lib/site";
 import { cn } from "@/lib/utils";
-
-const images: Record<string, string> = {
-  "grm-maternity-store": workGrm,
-  "eyal-muzik": workEyal,
-  "berlin-mens-clothing": workBerlin,
-};
 
 const filters = ["All", "Social Media", "Graphic Design", "Video Editing", "Paid Ads"] as const;
 
@@ -128,14 +119,14 @@ function OurWork() {
             <Reveal key={p.slug} delay={i * 80}>
               <article id={p.slug} className="card-premium group scroll-mt-28 overflow-hidden">
                 <div className="grid gap-0 lg:grid-cols-2">
-                  <div className="overflow-hidden">
+                  <div className="overflow-hidden lg:self-center">
                     <img
-                      src={images[p.slug]}
+                      src={projectImages[p.slug]}
                       alt={p.alt}
-                      width={1024}
-                      height={768}
+                      width={1353}
+                      height={600}
                       loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="aspect-[2.25] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-8 md:p-10">

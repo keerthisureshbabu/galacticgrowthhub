@@ -24,11 +24,11 @@ const banners = [
 ];
 
 const floaters = [
-  { label: "SEO", className: "left-[6%] top-[22%]", delay: "0s" },
-  { label: "META ADS", className: "right-[8%] top-[16%]", delay: "-1.4s" },
-  { label: "GOOGLE ADS", className: "right-[14%] bottom-[18%]", delay: "-2.8s" },
-  { label: "SOCIAL MEDIA", className: "left-[10%] bottom-[22%]", delay: "-2s" },
-  { label: "GROWTH", className: "left-[46%] top-[8%]", delay: "-3.6s" },
+  { label: "SEO", className: "left-0 top-[24%]", delay: "0s" },
+  { label: "META ADS", className: "right-0 top-[16%]", delay: "-1.4s" },
+  { label: "GOOGLE ADS", className: "right-0 bottom-[24%]", delay: "-2.8s" },
+  { label: "SOCIAL MEDIA", className: "left-0 bottom-[18%]", delay: "-2s" },
+  { label: "GROWTH", className: "left-1/2 top-[6%] -translate-x-1/2", delay: "-3.6s" },
 ];
 
 export function Hero() {
@@ -44,20 +44,22 @@ export function Hero() {
   const banner = banners[index] ?? banners[0]!;
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-x-clip">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        {floaters.map((f) => (
-          <span
-            key={f.label}
-            style={{ animationDelay: f.delay }}
-            className={cn(
-              "animate-float-slow glass absolute hidden rounded-full px-4 py-2 text-[10px] font-semibold tracking-[0.25em] text-primary/80 md:block",
-              f.className,
-            )}
-          >
-            {f.label}
-          </span>
-        ))}
+        <div className="relative mx-auto h-full w-full max-w-7xl px-4">
+          {floaters.map((f) => (
+            <span
+              key={f.label}
+              style={{ animationDelay: f.delay }}
+              className={cn(
+                "animate-float-slow glass absolute hidden whitespace-nowrap rounded-full px-4 py-2 text-[10px] font-semibold tracking-[0.25em] text-primary/80 lg:block",
+                f.className,
+              )}
+            >
+              {f.label}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="mx-auto max-w-5xl px-5 pt-40 pb-20 text-center md:pt-48 md:pb-28">
@@ -86,6 +88,18 @@ export function Hero() {
             View Our Work
           </GLink>
         </div>
+
+        {/* Same keywords, stacked in flow on tablet/mobile where floating would clip */}
+        <ul className="animate-rise mt-10 flex flex-wrap justify-center gap-2 [animation-delay:520ms] lg:hidden">
+          {floaters.map((f) => (
+            <li
+              key={f.label}
+              className="glass rounded-full px-3.5 py-1.5 text-[10px] font-semibold tracking-[0.2em] text-primary/80"
+            >
+              {f.label}
+            </li>
+          ))}
+        </ul>
 
         {/* Rotating banner messages */}
         <div className="animate-rise mt-16 [animation-delay:560ms]">

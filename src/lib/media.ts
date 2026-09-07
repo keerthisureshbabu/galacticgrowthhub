@@ -31,3 +31,14 @@ export const berlinReels: Reel[] = [
   },
   { src: berlinReel4.url, poster: berlinReel4Poster.url, label: "Berlin Men's Clothing shirt collection reel" },
 ];
+
+import siteBerlin from "@/assets/site-berlin.jpg.asset.json";
+import siteEyalMuzik from "@/assets/site-eyalmuzik.jpg.asset.json";
+import siteGrm from "@/assets/site-grm.jpg.asset.json";
+
+/** Real client website front pages, keyed by project slug. */
+export const projectImages: Record<string, string> = {
+  "grm-maternity-store": siteGrm.url,
+  "eyal-muzik": siteEyalMuzik.url,
+  "berlin-mens-clothing": siteBerlin.url,
+};
