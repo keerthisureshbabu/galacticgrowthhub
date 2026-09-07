@@ -89,6 +89,18 @@ export function Hero() {
           </GLink>
         </div>
 
+        {/* Same keywords, stacked in flow on tablet/mobile where floating would clip */}
+        <ul className="animate-rise mt-10 flex flex-wrap justify-center gap-2 [animation-delay:520ms] lg:hidden">
+          {floaters.map((f) => (
+            <li
+              key={f.label}
+              className="glass rounded-full px-3.5 py-1.5 text-[10px] font-semibold tracking-[0.2em] text-primary/80"
+            >
+              {f.label}
+            </li>
+          ))}
+        </ul>
+
         {/* Rotating banner messages */}
         <div className="animate-rise mt-16 [animation-delay:560ms]">
           <div key={index} className="glass animate-rise mx-auto max-w-3xl rounded-3xl px-6 py-8 md:px-10">
