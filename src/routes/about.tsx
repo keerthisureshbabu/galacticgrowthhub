@@ -73,9 +73,9 @@ function About() {
 
       {/* Founder */}
       <Section>
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal>
-            <div className="card-premium relative overflow-hidden p-10">
+        <div className="grid items-stretch gap-10 lg:grid-cols-2">
+          <Reveal className="h-full">
+            <div className="card-premium relative flex h-full flex-col overflow-hidden p-8 md:p-10">
               <div className="animate-orb pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,color-mix(in_oklab,var(--gold)_20%,transparent),transparent_60%)]" />
               <p className="text-[11px] font-semibold tracking-[0.24em] text-primary uppercase">Founder</p>
               <img
@@ -84,7 +84,7 @@ function About() {
                 width={900}
                 height={1200}
                 loading="lazy"
-                className="mt-6 aspect-3/4 w-full rounded-2xl border border-border/60 object-cover object-top"
+                className="mt-6 min-h-0 w-full flex-1 rounded-2xl border border-border/60 object-cover object-top max-lg:aspect-3/4"
               />
               <h2 className="mt-6 text-3xl font-semibold">Sanjay</h2>
               <p className="mt-2 text-sm text-muted-foreground">
