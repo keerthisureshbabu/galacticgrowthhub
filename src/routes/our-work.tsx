@@ -2,9 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Check, Instagram } from "lucide-react";
 import { useMemo, useState } from "react";
 
-import workBerlin from "@/assets/work-berlin.jpg";
-import workEyal from "@/assets/work-eyal.jpg";
-import workGrm from "@/assets/work-grm.jpg";
 import { ReelPlayer } from "@/components/ReelPlayer";
 import { Reveal } from "@/components/Reveal";
 import {
@@ -19,12 +16,6 @@ import { projects, workFaqs } from "@/lib/content";
 import { berlinReels, clientLogos } from "@/lib/media";
 import { breadcrumbSchema, faqSchema, pageMeta } from "@/lib/site";
 import { cn } from "@/lib/utils";
-
-const images: Record<string, string> = {
-  "grm-maternity-store": workGrm,
-  "eyal-muzik": workEyal,
-  "berlin-mens-clothing": workBerlin,
-};
 
 const filters = ["All", "Social Media", "Graphic Design", "Video Editing", "Paid Ads"] as const;
 
@@ -130,7 +121,7 @@ function OurWork() {
                 <div className="grid gap-0 lg:grid-cols-2">
                   <div className="overflow-hidden">
                     <img
-                      src={images[p.slug]}
+                      src={projectImages[p.slug]}
                       alt={p.alt}
                       width={1024}
                       height={768}
