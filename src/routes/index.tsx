@@ -50,7 +50,7 @@ function Home() {
           Galactic Growth Hub is a digital marketing agency based in Salem, Tamil Nadu, founded by Sanjay. It
           offers social media marketing, paid advertising (Meta &amp; Google Ads), SEO, website development,
           video editing, and branding services for small and growing businesses across India, with monthly
-          plans starting at ₹10,000.
+          plans starting at ₹20,000.
         </QuickAnswer>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
@@ -65,7 +65,7 @@ function Home() {
           />
           <Reveal delay={120} className="grid grid-cols-2 gap-4 self-center">
             {[
-              { k: "₹10,000", v: "Starting monthly plan" },
+              { k: "₹20,000", v: "Starting monthly plan" },
               { k: "7", v: "Core service lines" },
               { k: "3", v: "Brands partnered" },
               { k: "Mon–Sat", v: "10 AM – 7 PM support" },

@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import workBerlin from "@/assets/work-berlin.jpg";
 import workEyal from "@/assets/work-eyal.jpg";
 import workGrm from "@/assets/work-grm.jpg";
+import { ReelPlayer } from "@/components/ReelPlayer";
 import { Reveal } from "@/components/Reveal";
 import {
   Breadcrumbs,
@@ -15,6 +16,7 @@ import {
   SectionHeading,
 } from "@/components/sections";
 import { projects, workFaqs } from "@/lib/content";
+import { berlinReels, clientLogos } from "@/lib/media";
 import { breadcrumbSchema, faqSchema, pageMeta } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -84,6 +86,23 @@ function OurWork() {
         </div>
       </Section>
 
+      {/* Client logos */}
+      <Section>
+        <Reveal className="glass flex flex-wrap items-center justify-center gap-8 rounded-3xl px-8 py-8 md:gap-14">
+          {projects.map((p) => (
+            <img
+              key={p.slug}
+              src={clientLogos[p.slug]}
+              alt={`${p.name} logo`}
+              width={160}
+              height={160}
+              loading="lazy"
+              className="h-16 w-auto rounded-xl object-contain opacity-80 transition-opacity duration-300 hover:opacity-100 md:h-20"
+            />
+          ))}
+        </Reveal>
+      </Section>
+
       <Section>
         <Reveal className="flex flex-wrap gap-2">
           {filters.map((f) => (
@@ -91,6 +110,7 @@ function OurWork() {
               key={f}
               type="button"
               onClick={() => setFilter(f)}
+              aria-pressed={filter === f}
               className={cn(
                 "rounded-full px-5 py-2 text-xs font-semibold tracking-wide transition-all duration-300",
                 filter === f
@@ -120,6 +140,14 @@ function OurWork() {
                   </div>
                   <div className="p-8 md:p-10">
                     <div className="flex flex-wrap items-center gap-3">
+                      <img
+                        src={clientLogos[p.slug]}
+                        alt={`${p.name} logo`}
+                        width={96}
+                        height={96}
+                        loading="lazy"
+                        className="size-12 rounded-lg object-contain"
+                      />
                       <span className="text-[10px] font-semibold tracking-[0.24em] text-primary uppercase">
                         {p.industry}
                       </span>
@@ -148,6 +176,19 @@ function OurWork() {
                     </a>
                   </div>
                 </div>
+
+                {p.slug === "berlin-mens-clothing" && (
+                  <div className="border-t border-border/60 p-8 md:p-10">
+                    <h3 className="text-sm font-semibold tracking-[0.22em] text-muted-foreground uppercase">
+                      Reels we produced
+                    </h3>
+                    <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                      {berlinReels.map((r) => (
+                        <ReelPlayer key={r.src} reel={r} />
+                      ))}
+                    </div>
+                  </div>
+                )}
               </article>
             </Reveal>
           ))}
