@@ -44,20 +44,22 @@ export function Hero() {
   const banner = banners[index] ?? banners[0]!;
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-x-clip">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        {floaters.map((f) => (
-          <span
-            key={f.label}
-            style={{ animationDelay: f.delay }}
-            className={cn(
-              "animate-float-slow glass absolute hidden rounded-full px-4 py-2 text-[10px] font-semibold tracking-[0.25em] text-primary/80 md:block",
-              f.className,
-            )}
-          >
-            {f.label}
-          </span>
-        ))}
+        <div className="relative mx-auto h-full w-full max-w-7xl px-4">
+          {floaters.map((f) => (
+            <span
+              key={f.label}
+              style={{ animationDelay: f.delay }}
+              className={cn(
+                "animate-float-slow glass absolute hidden whitespace-nowrap rounded-full px-4 py-2 text-[10px] font-semibold tracking-[0.25em] text-primary/80 lg:block",
+                f.className,
+              )}
+            >
+              {f.label}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="mx-auto max-w-5xl px-5 pt-40 pb-20 text-center md:pt-48 md:pb-28">
