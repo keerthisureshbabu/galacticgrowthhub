@@ -177,10 +177,10 @@ function Home() {
                   <img
                     src={projectImages[p.slug]}
                     alt={p.alt}
-                    width={1024}
-                    height={768}
+                    width={1353}
+                    height={600}
                     loading="lazy"
-                    className="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="aspect-16/10 w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">

@@ -123,10 +123,10 @@ function OurWork() {
                     <img
                       src={projectImages[p.slug]}
                       alt={p.alt}
-                      width={1024}
-                      height={768}
+                      width={1353}
+                      height={600}
                       loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="aspect-16/10 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 lg:aspect-auto lg:min-h-[22rem]"
                     />
                   </div>
                   <div className="p-8 md:p-10">
