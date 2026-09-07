@@ -11,6 +11,7 @@ import {
   SectionHeading,
 } from "@/components/sections";
 import { aboutFaqs, whyChooseUs } from "@/lib/content";
+import { founderPhoto } from "@/lib/media";
 import { breadcrumbSchema, faqSchema, pageMeta } from "@/lib/site";
 
 const journey = [
@@ -77,7 +78,14 @@ function About() {
             <div className="card-premium relative overflow-hidden p-10">
               <div className="animate-orb pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,color-mix(in_oklab,var(--gold)_20%,transparent),transparent_60%)]" />
               <p className="text-[11px] font-semibold tracking-[0.24em] text-primary uppercase">Founder</p>
-              <p className="mt-6 text-6xl font-bold text-gradient-gold md:text-7xl">S</p>
+              <img
+                src={founderPhoto}
+                alt="Sanjay, founder of Galactic Growth Hub"
+                width={900}
+                height={1200}
+                loading="lazy"
+                className="mt-6 aspect-3/4 w-full rounded-2xl border border-border/60 object-cover object-top"
+              />
               <h2 className="mt-6 text-3xl font-semibold">Sanjay</h2>
               <p className="mt-2 text-sm text-muted-foreground">
                 Founder · Digital Marketer · Model &amp; Artist

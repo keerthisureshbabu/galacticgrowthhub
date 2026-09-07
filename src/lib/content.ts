@@ -116,7 +116,7 @@ export const whyChooseUs = [
 export const plans = [
   {
     name: "Starter",
-    price: "₹10,000",
+    price: "₹20,000",
     period: "/ month",
     best: "Best for small businesses and new brands wanting a consistent, professional social media presence.",
     featured: false,
@@ -130,7 +130,7 @@ export const plans = [
   },
   {
     name: "Growth",
-    price: "₹20,000",
+    price: "₹30,000",
     period: "/ month",
     best: "Best for growing businesses ready to add paid advertising and stronger creative output.",
     featured: true,
@@ -145,7 +145,7 @@ export const plans = [
   },
   {
     name: "Premium",
-    price: "₹35,000",
+    price: "₹45,000",
     period: "/ month",
     best: "Best for established businesses wanting full-funnel marketing across social, search and web.",
     featured: false,
@@ -228,7 +228,7 @@ export const homeFaqs: Faq[] = [
   },
   {
     q: "How much does digital marketing cost with Galactic Growth Hub?",
-    a: "Monthly packages start at ₹10,000 for the Starter Plan, ₹20,000 for the Growth Plan, and ₹35,000 for the Premium Plan. Custom packages are also available.",
+    a: "Monthly packages start at ₹20,000 for the Starter Plan, ₹30,000 for the Growth Plan, and ₹45,000 for the Premium Plan. Custom packages are also available.",
   },
   {
     q: "Who founded Galactic Growth Hub?",
@@ -269,7 +269,7 @@ export const serviceFaqs: Faq[] = [
 export const pricingFaqs: Faq[] = [
   {
     q: "How much does Galactic Growth Hub charge per month?",
-    a: "Plans range from ₹10,000/month (Starter) to ₹35,000/month (Premium), depending on the services and ad platforms included.",
+    a: "Plans range from ₹20,000/month (Starter) to ₹45,000/month (Premium), depending on the services and ad platforms included.",
   },
   {
     q: "Is advertising budget included in the package price?",
