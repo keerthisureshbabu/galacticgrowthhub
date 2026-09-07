@@ -111,19 +111,19 @@ function Pricing() {
 
       {/* Plan cards */}
       <Section>
-        <div className="grid items-stretch gap-6 lg:grid-cols-3">
+        <div className="grid items-stretch gap-8 pt-6 lg:grid-cols-3">
           {plans.map((p, i) => (
             <Reveal key={p.name} delay={i * 110} className="h-full">
               <div
                 className={cn(
-                  "group card-premium relative flex h-full flex-col overflow-hidden p-8 transition-all duration-500 hover:-translate-y-2",
+                  "group card-premium relative isolate flex h-full flex-col p-8 pt-10 transition-all duration-500 hover:-translate-y-2",
                   p.featured &&
                     "border-primary/50 shadow-[var(--shadow-glow)] lg:-translate-y-4 lg:hover:-translate-y-6",
                 )}
               >
                 {p.featured && (
                   <>
-                    <span className="absolute -top-3 left-8 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-bold tracking-[0.2em] text-primary-foreground [background-image:var(--gradient-gold)]">
+                    <span className="absolute -top-3.5 left-1/2 z-20 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-1.5 text-[10px] font-bold tracking-[0.2em] text-primary-foreground shadow-[var(--shadow-glow)] [background-image:var(--gradient-gold)]">
                       <Sparkles className="size-3" />
                       RECOMMENDED
                     </span>
@@ -135,7 +135,7 @@ function Pricing() {
                 )}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute inset-x-0 top-0 h-px scale-x-0 [background-image:var(--gradient-gold)] transition-transform duration-700 group-hover:scale-x-100"
+                  className="pointer-events-none absolute inset-x-6 top-0 h-px scale-x-0 [background-image:var(--gradient-gold)] transition-transform duration-700 group-hover:scale-x-100"
                 />
 
                 <h2 className="text-xs font-semibold tracking-[0.28em] text-muted-foreground uppercase">
