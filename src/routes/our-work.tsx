@@ -119,14 +119,14 @@ function OurWork() {
             <Reveal key={p.slug} delay={i * 80}>
               <article id={p.slug} className="card-premium group scroll-mt-28 overflow-hidden">
                 <div className="grid gap-0 lg:grid-cols-2">
-                  <div className="overflow-hidden">
+                  <div className="overflow-hidden lg:self-center">
                     <img
                       src={projectImages[p.slug]}
                       alt={p.alt}
                       width={1353}
                       height={600}
                       loading="lazy"
-                      className="aspect-16/10 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 lg:aspect-auto lg:min-h-[22rem]"
+                      className="aspect-16/9 w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-8 md:p-10">
