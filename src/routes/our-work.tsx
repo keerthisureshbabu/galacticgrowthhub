@@ -126,7 +126,7 @@ function OurWork() {
                       width={1353}
                       height={600}
                       loading="lazy"
-                      className="aspect-16/9 w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      className="aspect-[2.25] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-8 md:p-10">
